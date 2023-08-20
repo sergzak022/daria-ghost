@@ -2,30 +2,36 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{!-- Tag info --}}
-{{#tag}}
-<header class="tag-header">
-    <h2 class="font-title weight-400">
-        <a class="clr-foreground" href="{{url}}">
-            {{name}}
-        </a>
-    </h2>
-    {{#if description}}
-        <p class="content">{{description}}</p>
-    {{else}}
-        <p>A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}</p>
-    {{/if}}
-    {{#if feature_image}}
-    <a href="{{url}}" class="image main"><img src="{{img_url feature_image}}" alt="{{title}}" /></a>
-    {{/if}}
-</header>
-{{/tag}}
 
-{{!-- Posts --}}
-<section>
+<section class="posts-container">
+    {{!-- Tag info --}}
+    {{#tag}}
+    <header class="tag-header">
+        <h2 class="font-title weight-400">
+            <a class="clr-foreground" href="{{url}}">
+                {{name}}
+            </a>
+        </h2>
+        {{#if description}}
+            <p class="content">{{description}}</p>
+        {{else}}
+            <p>A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}</p>
+        {{/if}}
+        {{#if feature_image}}
+        <a href="{{url}}" class="image main"><img src="{{img_url feature_image}}" alt="{{title}}" /></a>
+        {{/if}}
+    </header>
+    {{/tag}}
+
+    {{!-- Posts --}}
     <section class="posts">
         {{#foreach posts}}
           <a href="{{url}}" class="post card">
+            <section class="post-title">
+              <h5 class="p-y-2 p-x-3">
+                <span class="font-title weight-400">{{title}}</span>
+              </h5>
+            </section>
             {{#if feature_image}}
               <div class="image-container">
                 <img class="post-card-image"
@@ -40,17 +46,12 @@ into the {body} of the default.hbs template --}}
                 />
               </div>
             {{/if}}
-            <p class="card-content m-y-0">{{excerpt words="33"}}</p>
-            <section class="post-title">
-              <h5 class="m-t-1 p-x-2">
-                <span class="higlight">{{title}}</span>
-              </h5>
-            </section>
+            <p class="card-content m-y-0 p-x-3">{{excerpt words="33"}}</p>
           </a>
         {{/foreach}}
     </section>
-
 </section>
+
 
 {{!-- Pagination --}}
 {{pagination}}

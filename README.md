@@ -47,6 +47,11 @@ npm run test
 
 Original template files and design by [@ajlkn](https://twitter.com/ajlkn)
 
+# TODO
+
+1. Setup SMPT integration
+2. Setup automatic theme deployment
+
 
 # Copyright & License
 
