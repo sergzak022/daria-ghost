@@ -1,21 +1,7 @@
 # Note
 Use node.js version 14.15.0 to install dependencies and compile project
 
-
-# Editorial
-
-This is Editorial, a news-oriented design built around a dynamic 'locking' sidebar (try the toggle to see it in action!) and purpose built for content-centric sites. Originally created by [@ajlkn](https://twitter.com/ajlkn) for [HTML5 UP](https://html5up.net) and later ported to [Ghost](https://ghost.org)
-
-**Demo: https://editorial.ghost.io**
-
-&nbsp;
-
-![screenshot](https://user-images.githubusercontent.com/120485/49328081-0e192680-f59d-11e8-808a-e6d6bcfa8419.png)
-
-
-&nbsp;
-
-# First time using a Ghost theme?
+# Ghost theme
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
 
@@ -56,7 +42,7 @@ gulp
 gulp zip
 
 # Run compatibility test against latest version of Ghost
-yarn test
+npm run test
 ```
 
 Original template files and design by [@ajlkn](https://twitter.com/ajlkn)
