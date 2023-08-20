@@ -1,0 +1,26 @@
+//NOTE: import color variables so can use them to set the theme
+@import '../../node_modules/materialize-css/sass/components/color-variables';
+
+//NOTE: overwrite materialize default colors from 'node_modules/materialize-css/sass/components/_variables'
+@import './theme/variables';
+
+@import '../../node_modules/materialize-css/sass/materialize';
+
+@import './helpers/helpers';
+
+@import './theme/theme';
+
+//FONTS
+// @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Sora:wght@700;800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+
+//Layouts
+@import './layout/layouts';
+
+//Components
+@import './components/components';

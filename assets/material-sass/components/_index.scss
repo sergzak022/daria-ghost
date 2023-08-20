@@ -1,0 +1,54 @@
+.posts-container {
+  @media #{$large-and-up} {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.posts {
+  .post {
+    @extend .m-b-6, .bg-background;
+    display: block;
+
+    .post-title {
+      @extend .font-title, .clr-text;
+
+      span {
+//        @extend .clr-background;
+      }
+    }
+
+    .image-container {
+      img {
+        width: 100%;
+      }
+
+      &:after {
+        display: block;
+        position: absolute;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16) 0, #0000000d 100%);
+        width: 100%;
+        content: '';
+        top: 0px;
+        bottom: 0px;
+      };
+    }
+
+    .card-content {
+      @extend .clr-text;
+    }
+  }
+}
+
+footer {
+  nav.pagination {
+    @extend .clr-text, .center-align;
+    font-weight: bold;
+    background: none;
+    box-shadow: none;
+
+    a {
+      @extend .clr-secondary;
+    }
+  }
+}

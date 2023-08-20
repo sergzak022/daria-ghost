@@ -1,0 +1,19 @@
+.intro {
+  @extend .center-align;
+
+  display: flex;
+  flex-direction: column;
+
+  .img-container {
+    @extend .m-t-6;
+
+    height:300px;
+    img {
+      @extend .circle, .z-depth-3;
+      height:100%;
+    }
+  }
+  .text-content {
+    @extend .p-y-4;
+  }
+}

@@ -1,0 +1,10 @@
+.sidenav {
+  @extend .font-featured;
+
+  background: $background-color;
+  li {
+    a {
+      font-size: 18px;
+    }
+  }
+}

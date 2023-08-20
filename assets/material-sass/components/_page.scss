@@ -1,0 +1,59 @@
+.page {
+  @media #{$large-and-up} {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.feature-image-container {
+  @extend .m-a-0;
+  text-align: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.page-content {
+  @extend .font-text;
+
+  a {
+    @extend .clr-secondary;
+  }
+
+  h2 {
+    @extend .font-title;
+    font-weight: 300;
+    font-size: 2rem;
+  }
+  h3 {
+    @extend .font-title;
+    font-weight: 300;
+    font-size: 1.8rem;
+  }
+
+  font-size: 18px;
+
+  ul {
+    @extend .p-l-3;
+    list-style: disc;
+    li {
+      list-style-type: inherit;
+    }
+  }
+
+  figure.kg-card {
+    @extend .m-a-0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    figcaption {
+      @extend .font-featured, .clr-text-ligth, .p-x-2;
+
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+}

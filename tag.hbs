@@ -1,0 +1,56 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Tag info --}}
+{{#tag}}
+<header class="tag-header">
+    <h2 class="font-title weight-400">
+        <a class="clr-foreground" href="{{url}}">
+            {{name}}
+        </a>
+    </h2>
+    {{#if description}}
+        <p class="content">{{description}}</p>
+    {{else}}
+        <p>A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}</p>
+    {{/if}}
+    {{#if feature_image}}
+    <a href="{{url}}" class="image main"><img src="{{img_url feature_image}}" alt="{{title}}" /></a>
+    {{/if}}
+</header>
+{{/tag}}
+
+{{!-- Posts --}}
+<section>
+    <section class="posts">
+        {{#foreach posts}}
+          <a href="{{url}}" class="post card">
+            {{#if feature_image}}
+              <div class="image-container">
+                <img class="post-card-image"
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1200w,
+                            {{img_url feature_image size="xl"}} 2000w"
+                    sizes="(max-width: 900px) 300px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    loading="lazy"
+                />
+              </div>
+            {{/if}}
+            <p class="card-content m-y-0">{{excerpt words="33"}}</p>
+            <section class="post-title">
+              <h5 class="m-t-1 p-x-2">
+                <span class="higlight">{{title}}</span>
+              </h5>
+            </section>
+          </a>
+        {{/foreach}}
+    </section>
+
+</section>
+
+{{!-- Pagination --}}
+{{pagination}}

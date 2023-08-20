@@ -1,0 +1,19 @@
+.social-icon {
+  @media #{$large-and-up} {
+    path {
+      fill: #b632e4;
+    }
+  }
+  @media #{$medium-and-down} {
+    path {
+      fill: $background-color;
+    }
+  }
+}
+
+.social-icon-footer {
+  fill: $background-color;
+}
+
+
+

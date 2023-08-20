@@ -1,0 +1,34 @@
+.services-list {
+  p.service-description {
+    @extend .font-featured, .clr-text;
+    font-size: 18px !important;
+
+    br {
+      display: block;
+      content: "";
+      border-bottom: 10px solid transparent; // Works in Chrome/Safari
+    }
+    @-moz-document url-prefix() {
+      br {
+        margin-bottom: 10px; // As 'border-bottom' doesn't work in firefox and 'margin-bottom' doesn't work in Chrome/Safari.
+      }
+    }
+  }
+
+  .service-card-body {
+    @extend .bg-background;
+    display: block;
+    min-height: 560px;
+  }
+
+  .indicators {
+    .indicator-item {
+      background-color: $secondary-color-light;
+      width: 20px;
+      height: 20px;
+      &.active {
+        background-color: $secondary-color-dark;
+      }
+    }
+  }
+}

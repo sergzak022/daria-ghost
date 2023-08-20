@@ -1,0 +1,58 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Intro --}}
+<section class="intro">
+  <section class="img-container show-on-small">
+    <img src="{{asset "images/daria_zari_health_and_wellness_writer_digital_marketer_poet_mental_health_adovate_content_creator.jpeg"}}" alt="Author Image" />
+  </section>
+  <section style="font-size: 24px;" class="font-featured text-content">
+    <p class="text-center">
+        Hi, my name is Daria. <br/> I am a digital marketer, writer, poet, and mental health advocate.
+    </p>
+  </section>
+</section>
+{{!-- Services --}}
+<section class="services m-b-5">
+  <header class="font-title weight-400 center-align m-b-5">
+      <h3>Services</h3>
+  </header>
+
+  <div class="services-list row hide-on-large-only">
+    {{#get "pages" filter="tags:service"}}
+        {{#foreach pages}}
+          <section class="col">
+            <a href="{{url absolute="true"}}" class="service-card-body card-panel">
+              <div style="text-align: center;">
+                <img style="width: 80%;" src="{{img_url feature_image size="s" absolute="true"}}" alt="{{title}}" />
+              </div>
+              <h5 class="center-align clr-text font-title p-x-4">{{title}}</h4>
+              <p class="service-description p-x-4">
+                {{custom_excerpt}}
+              </p>
+            </a>
+          </section>
+        {{/foreach}}
+    {{/get}}
+  </div>
+
+
+  {{!-- Services list --}}
+
+  <div class="services-list row hide-on-med-and-down">
+    {{#get "pages" filter="tags:service"}}
+        {{#foreach pages}}
+          <section class="col m4">
+            <a href="{{url absolute="true"}}" style="height: 740px" class="service-card-body card-panel">
+              <img style="width: 100%;" src="{{img_url feature_image size="s" absolute="true"}}" alt="{{title}}" />
+              <h5 class="center-align clr-text font-title">{{title}}</h4>
+              <p class="service-description">
+                {{custom_excerpt}}
+              </p>
+            </a>
+          </section>
+        {{/foreach}}
+    {{/get}}
+  </div>
+</section>

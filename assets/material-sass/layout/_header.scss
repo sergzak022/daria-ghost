@@ -1,0 +1,38 @@
+.header {
+  .brand-logo {
+    @extend .m-l-3;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    img {
+      height: 80%;
+    }
+  }
+  .sidenav-trigger {
+    @extend .m-x-0;
+  }
+  .socual-icons-cell {
+
+    @media #{$medium-and-down} {
+      top: 0;
+    }
+
+    height: $navbar-height-mobile;
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    right: 0;
+    margin-right: 12px;
+
+    ul {
+      height: 28px;
+      margin-top: 0;
+      margin-bottom: 0;
+      li {
+        display: inline-block;
+        width: 28px;
+      }
+    }
+  }
+}

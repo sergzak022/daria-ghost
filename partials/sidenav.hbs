@@ -1,0 +1,22 @@
+<ul id="{{target_name}}" class="sidenav">
+  <li><a class="waves-effect" href="/">Home</a></li>
+  <li><a class="waves-effect" href="/about">About</a></li>
+  <li><a class="waves-effect" href="/blog">Blog</a></li>
+  <li><a class="waves-effect" href="/creative">Creative</a></li>
+  <li><a id="side-nav-contact-link" class="waves-effect" href="#contact">Contact</a></li>
+
+
+</ul>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var sidenavs = document.querySelectorAll('.sidenav');
+    var [instance] = M.Sidenav.init(sidenavs);
+
+    var contactLink = document.querySelector('#side-nav-contact-link');
+
+    contactLink.addEventListener('click', () => {
+      instance.close();
+    });
+  });
+</script>

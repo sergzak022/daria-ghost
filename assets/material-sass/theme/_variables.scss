@@ -1,0 +1,56 @@
+//COLORS
+$orange-color: color('deep-orange', 'lighten-2');
+
+$lilac-color: #c292b4;
+
+$coral-color: #fe766a;
+
+$grey-color: color('blue-grey', 'lighten-2');
+
+$purlpe-color: #b632e4;
+
+//$primary-color: $coral-color;
+//$primary-color-light: lighten($coral-color, 15%);
+//$primary-color-dark: darken($coral-color, 15%);
+//$primary-color-darker: darken($coral-color, 25%);
+
+$primary-color: $lilac-color;
+$primary-color-light: lighten($lilac-color, 15%);
+$primary-color-dark: darken($lilac-color, 15%);
+$primary-color-darker: darken($lilac-color, 25%);
+
+$secondary-color: $purlpe-color;
+$secondary-color-light: lighten($purlpe-color, 15%);
+$secondary-color-dark: darken($purlpe-color, 15%);
+$secondary-color-darker: darken($purlpe-color, 25%);
+
+$foreground-color: #403248;
+$foreground-color-light: lighten($foreground-color, 15%);
+//$background-color: #fbf5ff;
+$background-color: lighten($foreground-color, 70%);
+
+$text-color: $foreground-color;
+$text-color-light: $foreground-color-light;
+
+$success-color: color('green', 'lighten-1');
+$error-color: color('red', 'lighten-1');
+$link-color: color("light-blue", "darken-1");
+
+
+//FONTS
+$font-logo: 'Kaushan Script', cursive;
+$font-text: 'Source Serif Pro', serif;
+//$font-title: 'Acme', sans-serif;
+$font-featured: 'Exo 2', sans-serif;
+
+//$font-title: 'Sora', sans-serif;
+
+//$font-title: 'Yanone Kaffeesatz', sans-serif;
+
+$font-title: 'Rowdies', cursive;
+
+$navbar-height-mobile: 80px;
+$navbar-line-height-mobile: 80px;
+
+$navbar-height: 80px;
+$navbar-line-height: 80px;

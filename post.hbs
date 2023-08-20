@@ -1,0 +1,130 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{#post}}
+{{!-- Everything inside the #post tags pulls data from the post --}}
+<section class="post-details">
+
+    <header class="post-header">
+        <section class="tags center-align m-t-2">
+          {{#foreach tags}}
+              <a href="{{url}}" title="{{name}}">{{name}}</a>
+          {{/foreach}}
+        </section>
+
+        <h4 class="font-title center-align m-t-2">{{title}}</h4>
+
+        {{#if custom_excerpt}}
+          <p class="custom-excerpt center-align m-y-2">
+            {{custom_excerpt}}
+          <p>
+        {{/if}}
+
+        <section class="row m-b-3 post-meta">
+          <style media="screen">
+            .updated[datetime="{{published_at}}"] { display: none; }
+          </style>
+          <div class="col s12 p-x-0">
+            <span class="author">
+              By <span>{{authors limit="1"}}</span>
+            </span>
+            &middot;
+            <span class="reading-time">
+              <b>{{reading_time}}</b>
+            </span>
+          </div>
+          <div class="col s12 p-x-0">
+            <span datetime="{{published_at}}" class="date"><b>Published</b> on {{date published_at format="MMM D, YYYY"}}</span>
+            &middot;
+            <span datetime="{{updated_at}}" class="date updated"><b>Updated</b> on {{date updated_at format="MMM D, YYYY"}}</span>
+          </div>
+          <div class="col p-x-0 s12 misc">This post may contain affiliated links</div>
+        </section>
+    </header>
+
+    {{#if feature_image}}
+        <figure class="kg-card kg-image-card feature-image-container">
+            <img
+                srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                src="{{img_url feature_image size="xl"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                loading="lazy"
+            />
+            {{#if feature_image_caption}}
+                <figcaption>{{feature_image_caption}}</figcaption>
+            {{/if}}
+        </figure>
+    {{/if}}
+
+    <div class="content gh-content">
+        {{content}}
+    </div>
+
+    {{!-- Email subscribe form at the bottom of the page --}}
+    {{#if @labs.subscribers}}
+    <section class="subscribe-form">
+        <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
+        <p>Get the latest posts delivered right to your inbox</p>
+        {{subscribe_form placeholder="youremail@example.com"}}
+    </section>
+    {{/if}}
+
+    <footer class="post-footer">
+        {{!--
+
+
+          {{#foreach authors}}
+            <a class="author" href="{{url}}">
+              {{#if profile_image}}
+                <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+              {{/if}}
+              {{name}}
+            </a>
+          {{/foreach}}
+
+
+        <div class="authors">
+            {{#foreach authors}}
+            <a class="author-box" href="{{url}}">
+                {{#if profile_image}}
+                <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                {{/if}}
+                <section class="author-box-content">
+                    <div class="author-box-label">Author</div>
+                    <h5 class="author-box-name">{{name}}</h5>
+                    {{#if bio}}
+                    <p>{{bio}}</p>
+                    {{else}}
+                    <p>Read more posts by this author.</p>
+                    {{/if}}
+                </section>
+            </a>
+            {{/foreach}}
+        </div>
+        --}}
+
+    </footer>
+
+    {{!--
+    <section class="post-full-comments">
+        If you want to embed comments, this is a good place to do it!
+    </section>
+    --}}
+
+</section>
+{{/post}}
+
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
